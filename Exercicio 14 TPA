@@ -1,18 +1,24 @@
 import java.util.Scanner;
 
-public class exercicio12 {
+public class Exercicio14 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
-        int A []= new int[10];
-        int B []= new int[10];
-        int C []= new int[10];
+        int[] A = new int[10];
+        int[] B = new int[10];
+        int[] C = new int[10];
 
         System.out.println("Digite os 10 elementos do vetor A:");
-        preencherVetor(scanner, A);
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Digite o elemento " + (i + 1) + ": ");
+            A[i] = in.nextInt();
+        }
 
         System.out.println("Digite os 10 elementos do vetor B:");
-        preencherVetor(scanner, B);
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Digite o elemento " + (i + 1) + ": ");
+            B[i] = in.nextInt();
+        }
 
         for (int i = 0; i < 10; i++) {
             if (A[i] > B[i]) {
@@ -24,23 +30,29 @@ public class exercicio12 {
             }
         }
 
-        exibirVetor("Vetor A:", A);
-        exibirVetor("Vetor B:", B);
-        exibirVetor("Vetor C (1 para A > B, 0 para A = B, -1 para A < B):", C);
-    }
-
-    public static void preencherVetor(Scanner scanner, int[] vetor) {
+        System.out.println("Vetor A:");
+        System.out.print ("[");
         for (int i = 0; i < 10; i++) {
-            System.out.print("Digite o elemento " + (i + 1) + ": ");
-            vetor[i] = scanner.nextInt();
+            System.out.print(A[i] + " ");
         }
-    }
-
-    public static void exibirVetor(String mensagem, int[] vetor) {
-        System.out.println(mensagem);
-        for (int i = 0; i < 10; i++) {
-            System.out.print(vetor[i] + " ");
-        }
+        System.out.print("]");
         System.out.println();
+
+        System.out.println("Vetor B:");
+        System.out.print("[");
+        for (int i = 0; i < 10; i++) {
+            System.out.print(B[i] + " ");
+        }
+        System.out.print("]");
+        System.out.println();
+
+        System.out.println("Vetor C:");
+        System.out.print("]");
+        for (int i = 0; i < 10; i++) {
+            System.out.print(C[i] + " ");
+        }
+        System.out.print("]");
+        System.out.println();
+        in.close();
     }
 }
