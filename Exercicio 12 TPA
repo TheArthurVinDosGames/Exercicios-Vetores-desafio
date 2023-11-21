@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class exercicio12 {
+	public static void main (String[]args){
+		Scanner in = new Scanner(System.in);
+		int a[], i;
+		a = new int [10];
+		for(i=0;i<10;i++) {
+			System.out.println("Insira o "+(i+1)+"° valor:");
+			a[i]=in.nextInt();
+		}
+		Boolean p = true;
+		for (i=0;i<a.length;i++){
+			if(a[i] != a[a.length - 1 - i]){
+					p = false;
+                break;
+            }
+        }
+
+        if (p) {
+            System.out.println("O vetor é um palíndromo.");
+        } else {
+            System.out.println("O vetor não é um palíndromo.");
+        }
+        in.close();
+    }
+}
+			
